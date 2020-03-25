@@ -53,6 +53,24 @@ echo `pwd`
 
 
 
+### BASH_SOURCE
+
+BASH_SOURCE表示的是用户所在的目录到脚本的路径。例如测试脚本如下：
+
+```shell
+[root@hadoop01 sbin]# ./test 
+./test
+[root@hadoop01 sbin]# cd ..
+[root@hadoop01 hadoop-2.7.7]# sbin/test 
+sbin/test
+```
+
+${BASH_SOURCE-$0} ：获取当前执行的脚本文件的全路径
+
+$0 和 $BASH_SOURCE的区别：当脚本是用./test.sh 或者 sh test.sh执行的话，$0返回的是文件目录，但是如果用source test.sh，$0返回的就是-bash，但$BASH_SOURCE就会返回当前文件目录。
+
+
+
 ### If 的使用
 
 见shell_if_tutorial.md
