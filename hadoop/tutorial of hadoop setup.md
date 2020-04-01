@@ -40,3 +40,11 @@
 
 具体怎么配置yarn-site.xml 和 container-executor.cfg. 参考https://blog.csdn.net/fbj312/article/details/63762891
 
+需要把container-executor.cfg里面的注释删掉
+
+配置文件权重：
+
+`chown root:drg bin/container-executor`
+
+`chmod 6050 bin/container-executor`
+
