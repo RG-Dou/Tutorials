@@ -14,6 +14,10 @@
 
 
 
+如果发现编译出的包没有用，试着mvn clean 把旧的包清理一下
+
+
+
 ## 运行
 
 这样编译完了之后，会将可执行文件放在`hadoop-dist/target`里，需要解压
@@ -48,3 +52,16 @@
 
 `chmod 6050 bin/container-executor`
 
+
+
+在/sys/fs/cgroups/blkio，/sys/fs/cgroup/cpu，/sys/fs/cgroup/memory 下面创建：
+
+`sudo mkdir yarn/`
+
+`sudo chown -R drg:drg /sys/fs/cgroup/blkio/hadoop-yarn `
+
+
+
+## 打包到本地库
+
+mvn install -DskipTests

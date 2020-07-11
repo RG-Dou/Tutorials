@@ -63,3 +63,13 @@ System.getenv() : 获取指定的环境变量的值
 ## 回调（callback）
 
 https://www.cnblogs.com/prayjourney/p/9667835.html
+
+
+
+## Abstract 和 Interface 区别
+
+A. interface需要实现，要用implements，而abstract class需要继承，要用extends。
+B. 一个类可以实现多个interface，但一个类只能继承一个abstract class。
+C. interface强调特定功能的实现，而abstractclass强调所属关系。
+D. 尽管interface实现类及abstrct class的子类都必须要实现相应的抽象方法，但实现的形式不同。interface中的每一个方法都是抽象方法，都只是声明的(declaration,没有方法体)，实现类必须要实现。而abstractclass的子类可以有选择地实现。
+
