@@ -65,3 +65,7 @@
 ## 打包到本地库
 
 mvn install -DskipTests
+
+## Zookeeper zoo.cfg
+minSessionTimeout=40000
+maxSessionTimeout=60000
