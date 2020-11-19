@@ -68,4 +68,10 @@ mvn install -DskipTests
 
 ## Zookeeper zoo.cfg
 minSessionTimeout=40000
+
 maxSessionTimeout=60000
+
+## Kafka server.config
+log.dirs=/data/drg_data/kafka-logs
+
+log.retention.hours=2
