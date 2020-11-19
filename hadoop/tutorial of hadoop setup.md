@@ -75,3 +75,8 @@ maxSessionTimeout=60000
 log.dirs=/data/drg_data/kafka-logs
 
 log.retention.hours=2
+
+## Task configuration
+job.coordinator.zk.session.timeout.ms=400000
+
+task.drop.producer.errors=true
