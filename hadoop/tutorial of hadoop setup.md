@@ -58,7 +58,7 @@
 
 `sudo mkdir yarn/`
 
-`sudo chown -R drg:drg /sys/fs/cgroup/blkio/hadoop-yarn `
+`sudo chown -R drg:drg /sys/fs/cgroup/blkio/yarn `
 
 
 
