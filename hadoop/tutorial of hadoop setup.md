@@ -54,7 +54,7 @@
 
 
 
-在/sys/fs/cgroups/blkio，/sys/fs/cgroup/cpu，/sys/fs/cgroup/memory 下面创建：
+在/sys/fs/cgroups/blkio，/sys/fs/cgroup/cpu，/sys/fs/cgroup/memory, /sys/fs/cgroup/net_cls,net_prio 下面创建：
 
 `sudo mkdir yarn/`
 
