@@ -26,7 +26,7 @@
 
 这个时候可能会有找不到JAVA_HOME的错误，需要在`etc/hadoop/hadoop_env.sh`的最后面设置一下JAVA_HOME
 
-
+如果在运行中遇到web server的问题, 是因为hadoop-yarn/hadoop-yarn-common下面缺失了main/resourcs/webapps/cluster这个文件夹. 需找到这个文件夹, 然后重新编译
 
 ## 使用cgoup
 
