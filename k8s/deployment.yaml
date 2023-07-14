@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-samza
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-samza
+      annotations:
+        oomKillDisable: "false"
+        scheduler.alpha.kubernetes.io/resize-resources-policy: "InPlacePreferred"
+#        scheduler.alpha.kubernetes.io/resize-resources-policy: "Restart"
+    spec:
+      hostNetwork: true
+      containers:
+      - name: hs1
+        image: anaerobic/hello-samza:latest
+        imagePullPolicy: "IfNotPresent"
+#        imagePullPolicy: "Never"
+        resources:
+          requests:
+            cpu: "4"
+            memory: "4Gi"
+          limits:
+            cpu: "4"
+            memory: "4Gi"
+        command:
+          - sleep
+          - "100000000"
