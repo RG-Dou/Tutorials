@@ -57,3 +57,44 @@
     can not connect to the google registery. use another one, for example:
     docker pull [registry.aliyuncs.com/google_containers/pause:3.1](<http://registry.aliyuncs.com/google_containers/pause:3.1>)
     docker tag [registry.aliyuncs.com/google_containers/pause:3.1](<http://registry.aliyuncs.com/google_containers/pause:3.1>) [k8s.gcr.io/pause:3.](http://k8s.gcr.io/pause:3.1)
+
+
+run k8s hello-samza
+https://hub.docker.com/r/anaerobic/hello-samza
+deployment.yaml在test/jdtests/policies/hello-samza
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-samza
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-samza
+      annotations:
+        oomKillDisable: "false"
+        scheduler.alpha.kubernetes.io/resize-resources-policy: "InPlacePreferred"
+#        scheduler.alpha.kubernetes.io/resize-resources-policy: "Restart"
+    spec:
+      hostNetwork: true
+      containers:
+      - name: hs1
+        image: anaerobic/hello-samza:latest
+        imagePullPolicy: "IfNotPresent"
+#        imagePullPolicy: "Never"
+        resources:
+          requests:
+            cpu: "4"
+            memory: "4Gi"
+          limits:
+            cpu: "4"
+            memory: "4Gi"
+        command:
+          - sleep
+          - "100000000"
+
+进入container内部编译：
+./cluster/kubectl.sh exec -it hello-samza-* -- bash
+需要等container启动1分钟之后再编译等
