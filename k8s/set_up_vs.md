@@ -55,3 +55,5 @@
     ```
     
     can not connect to the google registery. use another one, for example:
+    docker pull [registry.aliyuncs.com/google_containers/pause:3.1](<http://registry.aliyuncs.com/google_containers/pause:3.1>)
+    docker tag [registry.aliyuncs.com/google_containers/pause:3.1](<http://registry.aliyuncs.com/google_containers/pause:3.1>) [k8s.gcr.io/pause:3.](http://k8s.gcr.io/pause:3.1)
